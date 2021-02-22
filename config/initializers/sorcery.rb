@@ -80,7 +80,7 @@ Rails.application.config.sorcery.configure do |config|
   # i.e. [:twitter, :facebook, :github, :linkedin, :xing, :google, :liveid, :salesforce, :slack, :line].
   # Default: `[]`
   #
-  # config.external_providers =
+  config.external_providers = [:microsoft]
 
   # You can change it by your local ca_file. i.e. '/etc/pki/tls/certs/ca-bundle.crt'
   # Path to ca_file. By default use a internal ca-bundle.crt.
@@ -169,11 +169,11 @@ Rails.application.config.sorcery.configure do |config|
   # See: https://docs.microsoft.com/en-us/azure/active-directory/active-directory-v2-limitations#restrictions-on-redirect-uris
   # More information at https://graph.microsoft.io/en-us/docs
   #
-  # config.microsoft.key = ""
-  # config.microsoft.secret = ""
-  # config.microsoft.callback_url = "http://0.0.0.0:3000/oauth/callback/microsoft"
-  # config.microsoft.user_info_mapping = {:email => "userPrincipalName", :username => "displayName"}
-  # config.microsoft.scope = "openid email https://graph.microsoft.com/User.Read"
+  config.microsoft.key = ENV['CLIENT_ID']
+  config.microsoft.secret = ENV['CLIENT_SECRET']
+  config.microsoft.callback_url = "http://0.0.0.0:3000/oauth/callback/microsoft"
+  config.microsoft.user_info_mapping = {:email => "userPrincipalName", :username => "displayName"}
+  config.microsoft.scope = "openid email https://graph.microsoft.com/User.Read"
   #
   # config.vk.key = ""
   # config.vk.secret = ""
@@ -226,7 +226,7 @@ Rails.application.config.sorcery.configure do |config|
   # config.line.bot_prompt = "normal"
   # config.line.user_info_mapping = {name: 'displayName'}
 
-  
+
   # For information about Discord API
   # https://discordapp.com/developers/docs/topics/oauth2
   # config.discord.key = "xxxxxx"
