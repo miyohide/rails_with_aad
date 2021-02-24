@@ -1,24 +1,13 @@
-# README
+# これは何か
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Railsアプリに対してAzure AD認証を追加するテストです。
 
-Things you may want to cover:
+最初は以下の記事を参照して実装。
 
-* Ruby version
+https://github.com/Sorcery/sorcery/wiki/External---Microsoft-Graph-authentication
 
-* System dependencies
+Redirect URLに以下のURLを指定しろと書いているが、Azure Portal上では設定できなかった（クエリ文字列を含める事はできない）。
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+http://localhost:3000/oauth/callback?provider=microsoft
+```
