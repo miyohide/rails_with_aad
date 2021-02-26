@@ -30,7 +30,7 @@ module OmniAuth
 
       def raw_info
         # Get user profile information from the /me endpoint
-        @raw_info ||= access_token.get('https://graph.microsoft.com/v1.0/me?$select=displayName,mail,mailboxSettings,userPrincipalName').parsed
+        @raw_info ||= access_token.get('https://graph.microsoft.com/v1.0/me?$select=displayName,userPrincipalName').parsed
       end
 
       def authorize_params
