@@ -48,14 +48,14 @@
                   <% if @user_avatar %>
                     <img src=<%= @user_avatar %> class="rounded-circle align-self-center mr-2 profile-photo">
                   <% else %>
-                    <%= image_tag "no-profile-photo.png", class: "rounded-circle align-self-center mr-2 profile-photo" %>
+                    <%# image_tag "no-profile-photo.png", class: "rounded-circle align-self-center mr-2 profile-photo" %>
                   <% end %>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right">
                   <h5 class="dropdown-item-text mb-0"><%= @user_name %></h5>
                   <p class="dropdown-item-text text-muted mb-0"><%= @user_email %></p>
                   <div class="dropdown-divider"></div>
-                  <%= link_to "Sign Out", {:controller => :auth, :action => :signout}, :class => "dropdown-item" %>
+                  <%# link_to "Sign Out", {:controller => :auth, :action => :signout}, :class => "dropdown-item" %>
                 </div>
               </li>
             <% else %>
