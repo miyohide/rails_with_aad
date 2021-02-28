@@ -8,4 +8,9 @@ class AuthController < ApplicationController
 
     redirect_to root_url
   end
+
+  def signout
+    reset_session
+    redirect_to root_url
+  end
 end
