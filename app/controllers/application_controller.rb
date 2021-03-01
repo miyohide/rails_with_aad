@@ -15,6 +15,15 @@ class ApplicationController < ActionController::Base
 
   def access_token
     session[:graph_token_hash][:token]
+
+    expiry = Time.at(token_hash[:expires_at] - 300)
+
+    if Time.now > expiry
+      new_hash = refresh_tokens token_hash
+      new_hash[:token]
+    else
+      token_hash[:token]
+    end
   end
 
   def set_user
