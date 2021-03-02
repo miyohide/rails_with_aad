@@ -11,3 +11,9 @@ Redirect URLに以下のURLを指定しろと書いているが、Azure Portal�
 ```
 http://localhost:3000/oauth/callback?provider=microsoft
 ```
+
+# OmniAuth::AuthenticityError Forbidden Erros が発生する
+
+see. https://stackoverflow.com/questions/65822440/build-ruby-on-rails-apps-with-microsoft-graph-tutorial-omniauthauthenticityerr
+
+omniauth gemのバージョンを1系に固定化することで対処。
