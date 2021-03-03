@@ -18,5 +18,6 @@ module GraphHelper
       HTTParty.get "#{GRAPH_HOST}#{endpoint}", headers: headers, query: params, body: payload ? payload.to_json : nil
     else
       raise "HTTP method #{method.upcase} not implemented"
+    end
   end
 end
