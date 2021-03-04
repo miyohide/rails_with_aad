@@ -4,12 +4,12 @@ class UserDetailController < ApplicationController
   def index
     @user_detail = make_api_call("GET", "/v1.0/me", access_token)
     render json: @user_detail
-    # rescue RuntimeError => e
-    #   @errors = [
-    #     {
-    #       message: "Microsoft Graph returned an error getting user info",
-    #       debug: e
-    #     }
-    #   ]
+    rescue RuntimeError => e
+      @errors = [
+        {
+          message: "Microsoft Graph returned an error getting user info",
+          debug: e
+        }
+      ]
   end
 end
