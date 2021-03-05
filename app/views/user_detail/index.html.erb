@@ -2,30 +2,16 @@
 <table class="table">
   <thead>
     <tr>
-        <th>businessPhones</th>
-        <th>displayName</th>
-        <th>givenName</th>
-        <th>jobTitle</th>
-        <th>mail</th>
-        <th>mobilePhone</th>
-        <th>officeLocation</th>
-        <th>preferredLanguage</th>
-        <th>surname</th>
-        <th>userPrincipalName</th>
+      <th>項目</th>
+      <th>値</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td><%= @user_detail["businessPhones"] %></td>
-      <td><%= @user_detail["displayName"] %></td>
-      <td><%= @user_detail["givenName"] %></td>
-      <td><%= @user_detail["jobTitle"] %></td>
-      <td><%= @user_detail["mail"] %></td>
-      <td><%= @user_detail["mobilePhone"] %></td>
-      <td><%= @user_detail["officeLocation"] %></td>
-      <td><%= @user_detail["preferredLanguage"] %></td>
-      <td><%= @user_detail["surname"] %></td>
-      <td><%= @user_detail["userPrincipalName"] %></td>
-    </tr>
+    <% @keys.each do |key| %>
+      <tr>
+        <th><%= key %></th>
+        <td><%= @user_detail[key] %></td>
+      </tr>
+    <% end %>
   </tbody>
 </table>
