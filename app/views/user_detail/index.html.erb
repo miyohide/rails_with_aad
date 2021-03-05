@@ -1,2 +1,31 @@
-<h1>UserDetail#index</h1>
-<p>Find me in app/views/user_detail/index.html.erb</p>
+<h1>User Detail</h1>
+<table class="table">
+  <thead>
+    <tr>
+        <th>businessPhones</th>
+        <th>displayName</th>
+        <th>givenName</th>
+        <th>jobTitle</th>
+        <th>mail</th>
+        <th>mobilePhone</th>
+        <th>officeLocation</th>
+        <th>preferredLanguage</th>
+        <th>surname</th>
+        <th>userPrincipalName</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @user_detail["businessPhones"] %></td>
+      <td><%= @user_detail["displayName"] %></td>
+      <td><%= @user_detail["givenName"] %></td>
+      <td><%= @user_detail["jobTitle"] %></td>
+      <td><%= @user_detail["mail"] %></td>
+      <td><%= @user_detail["mobilePhone"] %></td>
+      <td><%= @user_detail["officeLocation"] %></td>
+      <td><%= @user_detail["preferredLanguage"] %></td>
+      <td><%= @user_detail["surname"] %></td>
+      <td><%= @user_detail["userPrincipalName"] %></td>
+    </tr>
+  </tbody>
+</table>
