@@ -17,3 +17,7 @@ http://localhost:3000/oauth/callback?provider=microsoft
 see. https://stackoverflow.com/questions/65822440/build-ruby-on-rails-apps-with-microsoft-graph-tutorial-omniauthauthenticityerr
 
 omniauth gemのバージョンを1系に固定化することで対処。
+
+# NameError (undefined local variable or method `token_hash' for ....が発生する
+
+`session[:graph_token_hash]`に格納されているデータ構造が想定と違う？
