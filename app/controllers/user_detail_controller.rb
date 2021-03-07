@@ -1,5 +1,6 @@
+require 'graph_helper'
+
 class UserDetailController < ApplicationController
-  include GraphHelper
 
   def index
     @keys = %w(
@@ -14,7 +15,7 @@ class UserDetailController < ApplicationController
       surname
       userPrincipalName
     )
-    @user_detail = make_api_call("GET", "/v1.0/me", access_token)
+    @user_detail = ::GraphHelper.make_api_call("GET", "/v1.0/me", access_token)
     rescue RuntimeError => e
       @errors = [
         {
