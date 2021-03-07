@@ -3,7 +3,7 @@ require "httparty"
 module GraphHelper
   GRAPH_HOST = "https://graph.microsoft.com".freeze
 
-  def make_api_call(method, endpoint, token, headers = nil, params = nil, payload = nil)
+  def self.make_api_call(method, endpoint, token, headers = nil, params = nil, payload = nil)
     headers ||= {}
     headers[:Authorization] = "Bearer #{token}"
     headers[:Accept] = "application/json"
