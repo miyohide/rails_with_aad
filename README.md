@@ -6,22 +6,17 @@ Railsアプリに認証機能を追加する際、[devise](https://github.com/he
 
 # 最初に試したこと
 
+[sorcery](https://github.com/Sorcery/sorcery)のWiki Pageをみていたら、[External Microsoft Graph authentication](https://github.com/Sorcery/sorcery/wiki/External---Microsoft-Graph-authentication)という記事を見つけたのでこれをやってみることにしました。
+
+ただ、Wiki中に
+
+> Finally under Redirect URI add a URI for your app. This is the address Azure will respond to with Authentication info.
+
+と記載があるのですが、私がAzure Portal上で試すと「クエリ文字列を含める事はできない」というエラーメッセージが出て登録できませんでした。
+
+結局、動かすことができずに終了しました。
 
 
-
-# これは何か
-
-Railsアプリに対してAzure AD認証を追加するテストです。
-
-最初は以下の記事を参照して実装。
-
-https://github.com/Sorcery/sorcery/wiki/External---Microsoft-Graph-authentication
-
-Redirect URLに以下のURLを指定しろと書いているが、Azure Portal上では設定できなかった（クエリ文字列を含める事はできない）。
-
-```
-http://localhost:3000/oauth/callback?provider=microsoft
-```
 
 # OmniAuth::AuthenticityError Forbidden Erros が発生する
 
