@@ -16,6 +16,10 @@ Railsアプリに認証機能を追加する際、[devise](https://github.com/he
 
 結局、動かすことができずに終了しました。
 
+# マイクロソフトのチュートリアルをやってみる
+
+何かいい手はないものかと思っていたところに、たまたま[マイクロソフトがチュートリアルを公開している](https://docs.microsoft.com/en-us/graph/tutorials/ruby)ことを発見。これに沿って実装してみることにしました。
+
 
 
 # OmniAuth::AuthenticityError Forbidden Erros が発生する
