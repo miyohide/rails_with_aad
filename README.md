@@ -2,7 +2,9 @@ Railsアプリに対してAzure AD認証を追加する
 
 # はじめに
 
-Railsアプリに認証機能を追加する際、deviseやsorceryなどのgemを使うのがよく使われますが、最近ではIDaaSというサービスがたくさん出ています。これらを使うことでユーザー管理に伴う様々な問題から解放されるということなので、Azure Active Directoryを使ってRailsアプリに認証機能を実装してみることにしました。
+Railsアプリに認証機能を追加する際、[devise](https://github.com/heartcombo/devise)や[sorcery](https://github.com/Sorcery/sorcery)などのgemを使うのがよく使われますが、最近ではIDaaSというサービスがたくさん出ています。これらを使うことでユーザー管理に伴う様々な問題から解放されるということなので、Azure Active Directoryを使ってRailsアプリに認証機能を実装してみることにしました。
+
+# 最初に試したこと
 
 
 
