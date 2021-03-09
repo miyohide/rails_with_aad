@@ -36,6 +36,7 @@ Railsアプリに認証機能を追加する際、[devise](https://github.com/he
 
 チュートリアルでは`ENV['AZURE_SCOPES']`に`openid profile email offline_access user.read mailboxsettings.read calendars.readwrite`を指定していましたが、私が試した時はうまく動きませんでした。おそらく試したユーザーの設定方法に依存するかと思います。私の場合、`email`、`mailboxsettings.read`、`calendars.readwrite`の内容を消すと動かすことができました。
 
+合わせて`microsoft_graph_auth.rb`の`raw_info`メソッドにおいて`/me`エンドポイントへのクエリ文字列からも`mail`と`mailboxSettings`を削除しましたが、これがどう影響したかは調べきれていないです。
 
 # OmniAuth::AuthenticityError Forbidden Erros が発生する
 
