@@ -38,11 +38,15 @@ Railsアプリに認証機能を追加する際、[devise](https://github.com/he
 
 合わせて`microsoft_graph_auth.rb`の`raw_info`メソッドにおいて`/me`エンドポイントへのクエリ文字列からも`mail`と`mailboxSettings`を削除しましたが、これがどう影響したかは調べきれていないです。
 
-# OmniAuth::AuthenticityError Forbidden Erros が発生する
+## OmniAuth::AuthenticityError Forbidden Erros が発生する
 
-see. https://stackoverflow.com/questions/65822440/build-ruby-on-rails-apps-with-microsoft-graph-tutorial-omniauthauthenticityerr
+一番ハマったのが`OmniAuth::AuthenticityError Forbidden Erros`が発生する問題です。色々と検索したところ、以下のstackoverflowの記事が該当しました。
 
-omniauth gemのバージョンを1系に固定化することで対処。
+[Build Ruby on Rails apps with Microsoft Graph Tutorial OmniAuth::AuthenticityError Forbidden Erros](https://stackoverflow.com/questions/65822440/build-ruby-on-rails-apps-with-microsoft-graph-tutorial-omniauthauthenticityerr)
+
+omniauth gemのバージョンを1系に固定化することで対応可能ということなので、`Gemfile`に`gem 'omniauth', '~> 1'`を1行追加して`bundle update`を実行しました。
+
+これで、Implement sign-inの部分までは成功しました。
 
 # NameError (undefined local variable or method `token_hash' for ....が発生する
 
