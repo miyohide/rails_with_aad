@@ -26,7 +26,7 @@ Railsアプリに認証機能を追加する際、[devise](https://github.com/he
 
 ## oauth_environment_variables.rbの作成
 
-[「Add Azure AD authentication」]()の部分にて`oauth_environment_variables.rb`を作成していろいろな値を環境変数経由で格納するところがあるのですが、これは[Railsが持っているcredentialの管理方法](https://railsguides.jp/security.html#%E7%8B%AC%E8%87%AA%E3%81%AEcredential)に従った方が良いかなと思いました。
+[「Add Azure AD authentication」](https://docs.microsoft.com/en-us/graph/tutorials/ruby?tutorial-step=3)の部分にて`oauth_environment_variables.rb`を作成していろいろな値を環境変数経由で格納するところがあるのですが、これは[Railsが持っているcredentialの管理方法](https://railsguides.jp/security.html#%E7%8B%AC%E8%87%AA%E3%81%AEcredential)に従った方が良いかなと思いました。
 
 実際のやり方は[「パーフェクトRuby on Rails【増補改訂版】」](https://gihyo.jp/book/2020/978-4-297-11462-6)に載っているので参照すると良いでしょう。
 
