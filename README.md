@@ -30,6 +30,11 @@ Railsアプリに認証機能を追加する際、[devise](https://github.com/he
 
 実際のやり方は[「パーフェクトRuby on Rails【増補改訂版】」](https://gihyo.jp/book/2020/978-4-297-11462-6)に載っているので参照すると良いでしょう。
 
+なお、この変更で値の参照方法も`ENV['AZURE_APP_ID']`のように環境変数を参照する形から`Rails.application.credentials.azure_app_id`のように変更する必要があります。
+
+## scopeの範囲
+
+チュートリアルでは`ENV['AZURE_SCOPES']`に`openid profile email offline_access user.read mailboxsettings.read calendars.readwrite`を指定していましたが、私が試した時はうまく動きませんでした。おそらく試したユーザーの設定方法に依存するかと思います。私の場合、`email`、`mailboxsettings.read`、`calendars.readwrite`の内容を消すと動かすことができました。
 
 
 # OmniAuth::AuthenticityError Forbidden Erros が発生する
