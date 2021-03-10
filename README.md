@@ -46,8 +46,22 @@ Railsアプリに認証機能を追加する際、[devise](https://github.com/he
 
 omniauth gemのバージョンを1系に固定化することで対応可能ということなので、`Gemfile`に`gem 'omniauth', '~> 1'`を1行追加して`bundle update`を実行しました。
 
-これで、Implement sign-inの部分までは成功しました。
+これで、「Add Azure AD authentication」の最後まで動作しました。
 
-# NameError (undefined local variable or method `token_hash' for ....が発生する
+# ユーザーの取得を行う
 
-`session[:graph_token_hash]`に格納されているデータ構造が想定と違う？
+チュートリアルではカレンダーデータの取得を行なっていましたが、自分は[Microsoft Graph APIのユーザーの取得](https://docs.microsoft.com/ja-jp/graph/api/user-get?view=graph-rest-1.0&tabs=http)を発行してみることにしました。
+
+チュートリアルでは、`app/helpers/graph_helper.rb`を作成していますが、ヘルパーはViewのために書くものなので、ちょっと違和感があります。私は、`lib`以下に作成し、`make_api_call`メソッドの定義を以下のようにしました（`self.`を追加した）。
+
+```ruby
+def self.make_api_call(method, endpoint, token, headers = nil, params = nil, payload = nil)
+```
+
+このメソッドをcontrollerで
+
+```ruby
+::GraphHelper.make_api_call("GET", "/v1.0/me", access_token)
+```
+
+という形で呼び出してあげると、Graph APIの呼び出しが成功します。
